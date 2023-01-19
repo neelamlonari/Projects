@@ -39,7 +39,7 @@ class Spaceship{
 
    const captain = new Spaceship(20,5,0.7,'Captain');
 
-   const addalienArr=[];
+   const addalienArr=[];// Make array of 6 alienships and function to push class parameter values 
    const alienArray = ()=>{
    for (let i = 0; i < 6; i++) {
      addalienArr.push( new Spaceship(Math.round(Math.random()*(7-3)+3),
@@ -52,7 +52,7 @@ class Spaceship{
 
    const startBattle = ()=>{
    
-     while(isPlaying )  
+     while(isPlaying )  // Loop will continue until isPlaying is true 
       {
         alert(captain.attack(addalienArr[0]));//You attack the first alien ship
         if( addalienArr[0].isAlive){//If the ship survives, it attacks you
@@ -76,10 +76,10 @@ class Spaceship{
           if(addalienArr.length>0){
               const retreat = prompt("Do you want to play battle with next Alienship, press 'Y' for playing and press 'N' to Quit");
               console.log(retreat);
-              if(retreat.toLowerCase() === 'y'){
+              if(retreat.toLowerCase() == 'y'){
                   alert (`${addalienArr[0].name} is start fighting with captain`);           
               }
-              else if(retreat.toLowerCase() === 'n') {
+              else if(retreat.toLowerCase() == 'n') {
                   window.close();
                   break;
               }
@@ -89,7 +89,7 @@ class Spaceship{
             /////When the game is over, prompt the user if they would like to play again, and make it so the user can play again
             const restartGame = prompt("Captain Won , All Aliens are Destroyed, \n Press 'Y' for playing again and press 'N' for Quitting");
              ///////Bonus Point: After all alienships destroyed, After every battle you are asked if you want to return to base and recharge your shields.
-            if(restartGame.toLowerCase() === 'y'){
+            if(restartGame.toLowerCase() == 'y'){
               alienArray();
               captain.hull=20;  
               isPlaying=true;      
@@ -108,13 +108,13 @@ class Spaceship{
     startgameBtn.addEventListener('click',function(){
     const startgame = prompt(" Do you want to play a game ?  press 'Y' to play, \n press 'N' to exit");
     console.log(startgame);
-    if(startgame.toLowerCase()==='y'){
+    if(startgame.toLowerCase()=='y'){
 
        alert('Aliens are here to attack on Earth ');
        alienArray();
        //currentStatus();
       startBattle();
-    }else if(startgame.toLowerCase()==='n') {
+    }else if(startgame.toLowerCase()=='n') {
         alert('Good bye');
       }
     }
@@ -136,10 +136,10 @@ retreatBtn.addEventListener('click',function(){
     alert('You Loose the battle!!!!');
     const retreat =prompt("Do you want to play battle with next Alienship, press 'Y' for playing and press 'N' to Quit");
     console.log(retreat);
-    if(retreat.toLowerCase() === 'y'){
+    if(retreat.toLowerCase() == 'y'){
       alienArray();
       startBattle();
-    }else if(retreat.toLowerCase() === 'n') {
+    }else if(retreat.toLowerCase() == 'n') {
     exit1();}
 }
 )
